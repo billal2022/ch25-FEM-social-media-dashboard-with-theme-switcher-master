@@ -247,12 +247,17 @@ color: white;
     -webkit-text-fill-color: transparent;
 }
   /***hovers dark ***/
-  .section-childs:hover,.kids:hover,.switch .slider.round:hover{
+  .section-childs:hover,.kids:hover{
     cursor: pointer;
     filter: brightness(1.4);
 
   }
 /***hovers light ***/
+.section-childs.light:hover,.kids.light:hover,.switch .slider.round:hover{
+    cursor: pointer;
+    filter: brightness(0.9);
+
+  }
 /***line in header ***/
 .line{
     height: 2px;

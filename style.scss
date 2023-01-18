@@ -1,0 +1,331 @@
+@import url(InstaIcon.css);
+
+:root{
+--ime-Green: hsl(163, 72%, 41%);
+--Brigh-Red: hsl(356, 69%, 56%);
+--Facebook: hsl(208, 92%, 53%);
+--Twitter: hsl(203, 89%, 53%);
+--Instagram: linear-gradient(to top right,hsl(37, 97%, 70%) , hsl(329, 70%, 58%)) ;
+--YouTube: hsl(348, 97%, 39%);
+/* Dark Theme*/
+--Toggle-dark: linear-gradient(to right,hsl(210, 78%, 56%) , hsl(146, 68%, 55%)) ;
+/* Light Theme*/
+--Toggle-light: hsl(230, 22%, 74%);
+/*Dark Theme*/
+--Very-Dark-Blue-BG: hsl(230, 17%, 14%);
+--Very-Dark-Blue-Top-BG-Pattern: hsl(232, 19%, 15%);
+--Dark-Desaturated-Blue-Card-BG: hsl(228, 28%, 20%);
+--Desaturated-Blue-Text: hsl(228, 34%, 66%);
+--White-Text: hsl(0, 0%, 100%);
+/*light theme*/
+--White-BG: hsl(0, 0%, 100%);
+--Very-Pale-Blue-Top-BG-Pattern: hsl(225, 100%, 98%);
+--Light-Grayish-Blue-Card-BG: hsl(227, 47%, 96%);
+--Dark-Grayish-Blue-Text: hsl(228, 12%, 44%);
+--Very-Dark-Blue-Text: hsl(230, 17%, 14%);
+/** font weights**/
+--fw-400:400;
+--fw-700:700;
+/****/
+--transition-color-delay:color 700ms ease-in-out;
+--transition-BG-color-delay:background-color 700ms ease-in-out;
+}
+@import "./switch";
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+body{
+    transition:var(--transition-BG-color-delay);
+    display: grid;
+    background-color: var(--Very-Dark-Blue-Top-BG-Pattern);
+    &::after{
+        
+        content: "";
+        width: 100%;
+        position: absolute;
+        height: 75%;
+        bottom: 0;
+        background-color: var(--Very-Dark-Blue-BG);
+        z-index: -1;
+        transition:var(--transition-BG-color-delay);
+    }
+    &.light{
+        background-color: var(--White-BG);
+    }
+
+}
+body.light::after{
+    background-color: var(--White-BG);
+}
+
+.main-box{
+    
+    padding-block: 2rem;
+    width: 80%;
+    justify-self: center;
+    gap: 3rem;
+    display: grid;
+    header{
+        display: flex;
+    align-items: center;
+    justify-content: space-between;
+color: var(--White-Text);
+transition: var(--transition-color-delay);
+&.light{
+   color: var(--Very-Dark-Blue-Text);
+}
+
+
+}
+    }
+    .left-h{
+    p{
+        color: var(--Desaturated-Blue-Text);
+        font-weight: var(--fw-700);
+        transition: var(--transition-color-delay);
+        &.light{
+            color: var(--Dark-Grayish-Blue-Text);
+        }
+    }
+    }
+    .theme-box{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+/*top section*/
+
+.section-top{
+    display: grid;
+    grid-auto-flow: column;
+    justify-items: center;
+    gap: 1.5rem;
+
+    .section-childs{  
+        min-width: 240px;
+        padding-block: 1.3rem;
+        width: 100%;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        border-radius: 0.4rem;
+        background: var(--Dark-Desaturated-Blue-Card-BG);
+        position: relative;
+        overflow: hidden;
+        transition: var(--transition-BG-color-delay);
+        &.light{
+            background: var(--Light-Grayish-Blue-Card-BG);
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 0.2rem;
+            background: var(--Facebook);
+        }
+        &:nth-child(2)::after{
+            background: var(--Twitter);
+        }
+        &:nth-child(3)::after{
+            background: var(--Instagram);
+        }
+        &:nth-child(4)::after{
+            background: var(--YouTube);
+        }
+        span{
+            display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    color: var(--Desaturated-Blue-Text);
+    font-size: 11px;
+        }
+        p:nth-child(2){
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            transition:var(--transition-color-delay);
+            &.light{
+                color: var(--Very-Dark-Blue-Text);
+            }
+        }
+        p:nth-child(3){
+            font-size: 0.6rem;
+            font-weight: var(--fw-400);
+            color: var(--Desaturated-Blue-Text);
+            letter-spacing: 0.4rem;
+            text-transform: uppercase;
+        }
+        p:nth-child(4){
+            margin-top: 25px;
+            font-size: 0.7rem;
+            font-weight: var(--fw-400);
+            color: var(--ime-Green);
+display: flex;
+img{
+    object-fit: contain;
+    margin-right: 0.3rem;
+}
+        }
+
+    }
+}
+.middle-title{
+    color: var(--White-Text);
+    transition: var(--transition-color-delay);
+    &.light{
+color: var(--Very-Dark-Blue-Text);
+    }
+}
+/*bot section*/
+.section-kids{
+    display: grid;
+    grid: auto/ 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 1.5rem;
+   
+.kids{
+    border-radius: 0.4rem;
+    min-width: 240px;
+    padding: 1.3rem 1rem;
+    width: 100%;
+    background: var(--Dark-Desaturated-Blue-Card-BG);
+    transition:background 700ms ease-in-out;
+    &.light{
+        background:var(--Light-Grayish-Blue-Card-BG);
+    }
+    div:nth-child(1){
+        display: flex;
+        gap: 10px;
+        color: var(--Desaturated-Blue-Text);
+        justify-content: space-between;
+        margin-bottom: 2rem;
+
+    }
+    div:nth-child(2){
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .number.light{
+
+            color: var(--Very-Dark-Blue-Text);
+        
+    }
+        span:nth-child(1){
+            transition: color 600ms;
+font-size: 2rem;
+font-weight: var(--fw-700);
+color: white;
+
+        }
+        
+        span:nth-child(2){
+            color: var(--ime-Green);
+        font-size: 10px;
+        display: flex;
+        gap: 5px;
+    }
+            img{
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+/** just converted this icon to a text from https://icomoon.io/ so ican  change color easly**/
+.icon-icon-instagram{
+    background:var(--Instagram);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+  /***hovers dark ***/
+  .section-childs:hover,.kids:hover,.switch .slider.round:hover{
+    cursor: pointer;
+    filter: brightness(1.4);
+
+  }
+/***hovers light ***/
+/***line in header ***/
+.line{
+    height: 2px;
+    width: 100%;
+    background: var(--Dark-Grayish-Blue-Text);
+    opacity: 0.3;
+    margin-block: 1rem;
+    display: none;
+}
+
+
+.attribution {
+  background-image: 
+    linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet, red); 
+  -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+  animation: rainbow-animation 35s linear infinite;
+  justify-self: center;
+  a:hover{  
+
+    padding: 1rem;
+    border-radius: 23%;
+    animation: rainbow-animation 35s linear infinite;
+    background-image:  linear-gradient(to right, rgba(255, 0, 0, 0.142),rgba(255, 166, 0, 0.164),rgba(255, 255, 0, 0.26),rgba(0, 128, 0, 0.201),rgba(0, 0, 255, 0.192),rgba(76, 0, 130, 0.233),rgba(238, 130, 238, 0.16), rgba(255, 0, 0, 0.096)); 
+
+  }
+
+}
+
+@keyframes rainbow-animation {
+    to {
+        background-position: 850vh;
+    }
+}
+@media (max-width:1200px){
+    .section-top {
+        grid: auto/1fr 1fr 1fr;
+    }
+    .section-kids{
+        grid: auto/1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 992px){
+    .section-top {
+        grid: auto/1fr 1fr;
+    }
+    .section-kids{
+        grid: auto/1fr 1fr ;
+    }
+}
+
+    @media (max-width: 768px){
+        .section-top {
+            grid: auto/1fr;
+        }
+        .section-kids{
+            grid: auto/1fr  ;
+        }
+
+        .main-box header{
+            flex-direction: column;
+            align-items:flex-start;
+        }
+        .main-box{
+            width: 90%;
+        }
+        .theme-box{
+            width: 100%;
+            justify-content: space-between;
+        }
+        .line{
+            display: block;
+        }
+        
+    }
